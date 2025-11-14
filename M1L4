@@ -18,7 +18,7 @@ async def hello(ctx):
     await ctx.send(f'Hi! I am a bot {bot.user}!')
 
 @bot.command()
-async def passww(ctx):
+async def passw(ctx):
     await ctx.send(gen_pass(10))
 
 @bot.command()
@@ -58,4 +58,8 @@ async def roll(ctx, dice: str):
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     await ctx.send(result)
 
-bot.run("BOT TOKEN")
+@bot.command()
+async def command(ctx):
+    await ctx.send("hello\npassw\nrepeat\nchoose\nadd\nroll")
+
+bot.run("TOKEN")
